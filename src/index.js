@@ -1,1 +1,6 @@
-console.log(123);
+import { newToDo } from "./newtodo.js";
+
+let newArray = [];
+console.log(newArray);
+newToDo(newArray);
+console.log(newArray);
