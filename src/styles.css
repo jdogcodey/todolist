@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'nanum';
+    src: url(./fonts/NanumPenScript-Regular.ttf)
+}
+
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    background-color: #f6eee3;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+header, footer {
+    max-height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header p {
+    font-size: 2rem;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
+header {
+    border-bottom: 1px dashed black;
+    min-height: 30px;
+    flex-direction: row;
+}
+
+header button {
+    justify-self: flex-end;
+}
+
+main {
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#right-column, #left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#left-column {
+    border-right: 1px black solid;
+    min-width: 50px;
+    width: 20vw;
+}
+
+footer {
+    border-top: 1px dashed black;
+}
