@@ -1,17 +1,9 @@
 // Creating a New To Do list object on the to do array
 
-function newToDo(
-  arrayName,
-  name,
-  completed,
-  deadline,
-  priority,
-  list,
-  description
-) {
+function newToDo(arrayName, name, deadline, priority, list, description) {
   let toDo = {
     name: name,
-    completed: completed,
+    completed: 0,
     deadline: deadline,
     priority: priority,
     list: list,
