@@ -7,7 +7,7 @@ import { completeToDo } from "./completetodo.js";
 import { changePriority } from "./changepriority.js";
 import { toggleVisible } from "./togglevisibility.js";
 
-const globalToDoList = {};
+const globalToDoList = [];
 
 const myLogo = new Image();
 myLogo.src = Logo;
@@ -37,10 +37,16 @@ newToDo(
 console.log(globalToDoList);
 console.log("another to do added");
 
-newList(globalToDoList, "this is a new list named");
+newList(globalToDoList, "New list");
 
 console.log(globalToDoList);
 console.log("This is a new list added");
+
+console.log(globalToDoList["New list"]);
+
+moveList(globalToDoList, globalToDoList["New list"], "Second To Do");
+console.log(globalToDoList);
+console.log("should have moved");
 
 document.querySelector("#open-form").addEventListener("click", () => {
   toggleVisible("form");

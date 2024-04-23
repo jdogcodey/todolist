@@ -1,7 +1,7 @@
-// Function to create a new todo list and adds that list to the global list
+// Function to make a new list
 
-function newList(globalList, listName) {
-  globalList[listName] = {};
+function newList(arrayName, name) {
+  arrayName[name] = {};
 }
 
 export { newList };
