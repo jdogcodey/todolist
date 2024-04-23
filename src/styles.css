@@ -54,6 +54,10 @@ main {
     width: 20vw;
 }
 
+form {
+    display: none;
+}
+
 footer {
     border-top: 1px dashed black;
 }

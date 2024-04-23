@@ -1,7 +1,7 @@
 // Creating a New To Do list object on the to do array
 
 function newToDo(arrayName, name, deadline, priority, list, description) {
-  let toDo = {
+  arrayName[name] = {
     name: name,
     completed: 0,
     deadline: deadline,
@@ -10,8 +10,6 @@ function newToDo(arrayName, name, deadline, priority, list, description) {
     description: description,
     selected: "",
   };
-
-  arrayName.push(toDo);
 }
 
 export { newToDo };
