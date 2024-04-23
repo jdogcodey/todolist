@@ -5,7 +5,7 @@ import { newList } from "./newlist.js";
 import { moveList } from "./movelist.js";
 import { completeToDo } from "./completetodo.js";
 import { changePriority } from "./changepriority.js";
-import { toggleVisible } from "./togglevisibility.js";
+import { openForm } from "./forminteraction.js";
 
 const globalToDoList = [];
 
@@ -13,41 +13,4 @@ const myLogo = new Image();
 myLogo.src = Logo;
 document.querySelector("#logo").appendChild(myLogo);
 
-newToDo(
-  globalToDoList,
-  "Make To Do List",
-  "Tomorrow",
-  "High",
-  "List Not Organised Properly currently",
-  "Description goes here"
-);
-
-console.log(globalToDoList);
-console.log("new to do");
-
-newToDo(
-  globalToDoList,
-  "Second To Do",
-  "Date again",
-  "Low",
-  "Another thing",
-  "final thing"
-);
-
-console.log(globalToDoList);
-console.log("another to do added");
-
-newList(globalToDoList, "New list");
-
-console.log(globalToDoList);
-console.log("This is a new list added");
-
-console.log(globalToDoList["New list"]);
-
-moveList(globalToDoList, globalToDoList["New list"], "Second To Do");
-console.log(globalToDoList);
-console.log("should have moved");
-
-document.querySelector("#open-form").addEventListener("click", () => {
-  toggleVisible("form");
-});
+openForm("#open-form", "form");
