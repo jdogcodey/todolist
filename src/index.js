@@ -5,7 +5,7 @@ import { newList } from "./newlist.js";
 import { moveList } from "./movelist.js";
 import { completeToDo } from "./completetodo.js";
 import { changePriority } from "./changepriority.js";
-import { openForm } from "./createform.js";
+import { toggleVisible } from "./togglevisibility.js";
 
 const globalToDoList = [];
 
@@ -25,5 +25,5 @@ newToDo(
 console.log(globalToDoList);
 
 document.querySelector("#open-form").addEventListener("click", () => {
-  openForm();
+  toggleVisible("form");
 });
