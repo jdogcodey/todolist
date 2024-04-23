@@ -22,4 +22,8 @@ newToDo(
   "Description goes here"
 );
 
-document.querySelector("#open-form").addEventListener("click", openForm(input));
+console.log(globalToDoList);
+
+document.querySelector("#open-form").addEventListener("click", () => {
+  openForm();
+});
