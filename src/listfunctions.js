@@ -21,14 +21,14 @@ function newList(name) {
   allLists[name] = {};
 }
 
-function changePriority(todo, newpriority) {
-  allLists[todo["priority"]] = newpriority;
+function changePriority(todo, list, newpriority) {
+  allLists[list][todo].priority = newpriority;
 }
 
 function completeToDo(todo, list) {
-  allLists[list[todo]].completed = allLists[list[todo]].completed = "unchecked"
-    ? "unchecked"
-    : "checked";
+  allLists[list][todo].completed = allLists[list][todo].completed = "unchecked"
+    ? "checked"
+    : "unchecked";
 }
 
 function moveList(oldList, newList, obj) {
