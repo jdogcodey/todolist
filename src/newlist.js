@@ -1,7 +1,13 @@
 // Function to make a new list
+function testing(test) {
+  function newList() {
+    test = [];
+    return test;
+  }
 
-function newList(arrayName, name) {
-  arrayName[name] = {};
+  function output(test) {
+    console.log(test);
+  }
 }
 
-export { newList };
+export { testing };

@@ -3,7 +3,7 @@
 function newToDo(arrayName, name, deadline, priority, description) {
   arrayName[name] = {
     name: name,
-    completed: 0,
+    completed: "unchecked",
     deadline: deadline,
     priority: priority,
     description: description,
