@@ -1,11 +1,9 @@
 // All list variables and functions in one place
 
-// Array to contain all the todo lists
+// Object containing all of the todo lists
+const allLists = { globalList: {} };
 
-// Array to contain all the global To Do items (unassigned to a list)
-const globalList = {};
-const allLists = { globalList: globalList };
-
+// Adds a new to do object to the chosen list
 function newToDo(list, name, deadline, priority, description) {
   list[name] = {
     name: name,
@@ -17,20 +15,24 @@ function newToDo(list, name, deadline, priority, description) {
   };
 }
 
+// Creates a new ToDo List
 function newList(name) {
   allLists[name] = {};
 }
 
+//Changes the priority of the ToDo
 function changePriority(todo, list, newpriority) {
   allLists[list][todo].priority = newpriority;
 }
 
+//Flips between checked and unchecked for completed on the todo
 function completeToDo(todo, list) {
   allLists[list][todo].completed = allLists[list][todo].completed = "unchecked"
     ? "checked"
     : "unchecked";
 }
 
+//Allows you to move the todo between different lists
 function moveList(oldList, newList, obj) {
   const old = allLists[oldList][obj];
   allLists[newList][obj] = {
