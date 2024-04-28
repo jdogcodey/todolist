@@ -1,17 +1,16 @@
 // All list variables and functions in one place
 
 // Object containing all of the todo lists
-const allLists = { globalList: {} };
+const allLists = {};
 
 // Adds a new to do object to the chosen list
 function newToDo(list, name, deadline, priority, description) {
-  list[name] = {
+  allLists[list][name] = {
     name: name,
     completed: "unchecked",
     deadline: deadline,
     priority: priority,
     description: description,
-    selected: "",
   };
 }
 
@@ -46,12 +45,4 @@ function moveList(oldList, newList, obj) {
   delete allLists[oldList][obj];
 }
 
-export {
-  allLists,
-  globalList,
-  newToDo,
-  newList,
-  changePriority,
-  completeToDo,
-  moveList,
-};
+export { allLists, newToDo, newList, changePriority, completeToDo, moveList };

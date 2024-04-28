@@ -1,6 +1,6 @@
 // Opening the form and submitting the form
 import { toggleVisible } from "./togglevisibility.js";
-import { newToDo } from "./newtodo.js";
+import { newToDo } from "./listfunctions.js";
 // import { globalToDoList } from "./index.js";
 
 function openForm() {
@@ -8,7 +8,7 @@ function openForm() {
     toggleVisible("form");
   });
 }
-function submitForm(array) {
+function submitForm(obj) {
   document.querySelector("#submit").addEventListener("click", () => {
     event.preventDefault();
     const name = document.querySelector("#to-do-name");
@@ -19,8 +19,8 @@ function submitForm(array) {
     const priorityValue = priority.value;
     const description = document.querySelector("#description");
     const descriptionValue = description.value;
-    newToDo(array, nameValue, deadlineValue, priorityValue, descriptionValue);
-    console.log(array);
+    newToDo(obj, nameValue, deadlineValue, priorityValue, descriptionValue);
+    console.log(obj);
   });
 }
 
