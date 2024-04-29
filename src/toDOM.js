@@ -8,6 +8,7 @@ function updatePage() {
     list.textContent = `${listKey}`;
     leftColumn.appendChild(list);
     list.addEventListener("click", function onClick() {
+      rightColumn.innerHTML = "";
       for (const [toDoKey, toDoValue] of Object.entries(allLists[listKey])) {
         const toDoRow = document.createElement("button");
         rightColumn.appendChild(toDoRow);
