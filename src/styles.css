@@ -3,6 +3,11 @@
     src: url(./fonts/NanumPenScript-Regular.ttf)
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .wrapper {
     box-sizing: border-box;
     min-height: 100%;
@@ -12,33 +17,48 @@
     background-color: #f6eee3;
     border: 2px solid black;
     border-radius: 5px;
+    width: 80vw;
 }
 
 header, footer {
     max-height: 6vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: row;
 }
 
-header p {
-    font-size: 2rem;
+header  div {
+    font-size: 3.2rem;
     font-family: 'nanum', Arial, Helvetica, sans-serif;
-    margin: 10px;
+    display: flex;
+    align-items: center;
 }
 
 header {
     border-bottom: 1px dashed black;
     min-height: 30px;
-    flex-direction: row;
 }
 
-header button {
-    justify-self: flex-end;
+#center-header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#open-form {
+    background: none;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    font-size: 2rem;
+}
+
+.header-edge {
+    width: 200px;
 }
 
 main {
-    height: 88vh;
+    min-height: 88vh;
     display: flex;
     flex-direction: row;
 }
@@ -60,4 +80,5 @@ form {
 
 footer {
     border-top: 1px dashed black;
+    justify-content: center;
 }

@@ -8,13 +8,16 @@
 <body>
     <div class="wrapper">
     <header>
-        <p>ToDo List</p>
-        <div id="logo"></div>
-        <button id="open-form">NEW</button>
+        <div class="header-edge"></div>
+        <div id="center-header">
+            <p>ToDo List</p>
+            <div id="logo"></div>
+        </div>
+        <button id="open-form" class="header-edge">Add ToDo</button>
     </header>
     <main>
         <div id="left-column"></div>
-        <div id="right-column">
+        <div id="right-side">
             <form>
                 <label for="to-do-name">To Do</label>
                 <input type="text" name="name" placeholder="Task" id="to-do-name">
@@ -30,6 +33,7 @@
                 <textarea name="description" placeholder="ToDo Description" id="description"></textarea>
                 <input type="submit" value="Create ToDo" id="submit">
             </form>
+            <div id="right-column"></div>
         </div>
     </main>
     <footer>
