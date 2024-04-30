@@ -15,8 +15,8 @@ function newToDo(list, name, deadline, priority, description) {
 }
 
 // Creates a new ToDo List
-function newList(name) {
-  allLists[name] = {};
+function newList() {
+  allLists[prompt("New ToDo List", "Title")] = {};
 }
 
 //Changes the priority of the ToDo

@@ -68,10 +68,30 @@ main {
     flex-direction: column;
 }
 
-#left-column {
+#left-side, .list-button {
     border-right: 1px black solid;
     min-width: 50px;
     width: 20vw;
+}
+
+.list-button {
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px dashed black;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    height: 30px;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+#add-list {
+    text-align: right;
+}
+
+button:hover {
+    font-weight: 700;
 }
 
 form {
