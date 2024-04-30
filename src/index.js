@@ -9,7 +9,7 @@ import {
   completeToDo,
   moveList,
 } from "./listfunctions.js";
-import { updatePage, listButton } from "./toDOM.js";
+import { updatePage, addList } from "./toDOM.js";
 
 const myLogo = new Image();
 myLogo.src = Logo;
@@ -18,11 +18,7 @@ document.querySelector("#logo").appendChild(myLogo);
 openForm();
 submitForm(`globalList`);
 
-document.querySelector("#add-list").addEventListener("click", () => {
-  newList();
-  updatePage();
-});
-
+newList("List of Tasks", updatePage);
 // console.log("All lists");
 // console.log(allLists);
 // newList("globalList");

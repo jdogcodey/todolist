@@ -18,10 +18,11 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     width: 80vw;
+    min-width: 620px;
 }
 
 header, footer {
-    max-height: 6vh;
+    max-height: 10vh;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -58,7 +59,7 @@ header {
 }
 
 main {
-    min-height: 88vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: row;
 }
@@ -96,6 +97,40 @@ button:hover {
 
 form {
     display: none;
+    position: absolute;
+    z-index: 100;
+    align-self: center;
+    border: 2px solid black;
+    background-color: #f6eee3;
+    border-radius: 5px;
+    width: 30vw;
+    margin-top: 11vh;
+    margin-bottom: 11vh;
+    height: 78vh;
+    margin-bottom: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, minmax(20px, 13vh));
+    align-items: center;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+form * {
+    margin: 20px;
+    height: 30px;
+    border-spacing: none;
+}
+
+#description {
+    grid-area: 4 / 1 / 5 / 3 
+}
+
+#submit {
+    grid-area: 6 / 1 / 7 / 3;
+}
+
+label {
+    border-bottom: 1px dashed black;
 }
 
 footer {

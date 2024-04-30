@@ -1,10 +1,16 @@
 // Opening the form and submitting the form
 import { toggleVisible } from "./togglevisibility.js";
-import { newToDo } from "./listfunctions.js";
-// import { globalToDoList } from "./index.js";
+import { newToDo, allLists } from "./listfunctions.js";
 
 function openForm() {
   document.querySelector("#open-form").addEventListener("click", () => {
+    const listName = Object.keys(allLists);
+    for (let i = 0; i < listName.length; i++) {
+      const listOption = document.createElement("option");
+      listOption.textContent = listName[i];
+      listOption.value = listName[i];
+      document.querySelector("#choose-list").appendChild(listOption);
+    }
     toggleVisible("form");
   });
 }
@@ -19,8 +25,18 @@ function submitForm(obj) {
     const priorityValue = priority.value;
     const description = document.querySelector("#description");
     const descriptionValue = description.value;
-    newToDo(obj, nameValue, deadlineValue, priorityValue, descriptionValue);
-    console.log(obj);
+    const list = document.querySelector("#choose-list");
+    const listValue = list.value;
+    newToDo(
+      listValue,
+      nameValue,
+      deadlineValue,
+      priorityValue,
+      descriptionValue
+    );
+    console.log(allLists);
+    console.log(listValue);
+    toggleVisible("form");
   });
 }
 

@@ -1,4 +1,4 @@
-import { allLists } from "./listfunctions";
+import { allLists, newList } from "./listfunctions";
 
 function updatePage() {
   const leftColumn = document.querySelector("#left-column");
@@ -26,5 +26,9 @@ function updatePage() {
     });
   }
 }
+
+document.querySelector("#add-list").addEventListener("click", () => {
+  newList(prompt("Add ToDo List", "Name"), updatePage);
+});
 
 export { updatePage };
