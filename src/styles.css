@@ -26,6 +26,7 @@ header, footer {
     display: flex;
     align-items: center;
     flex-direction: row;
+    background-color: #966F33;
 }
 
 header  div {
@@ -36,7 +37,7 @@ header  div {
 }
 
 header {
-    border-bottom: 1px dashed black;
+    border-bottom: 1px solid black;
     min-height: 30px;
 }
 
@@ -82,13 +83,15 @@ main {
     border-right: none;
     border-bottom: 1px dashed black;
     font-family: 'nanum', Arial, Helvetica, sans-serif;
-    height: 30px;
+    height: 40px;
     font-size: 1.5rem;
     text-align: left;
+    width: 100%;
 }
 
 #add-list {
     text-align: right;
+    background-color: #b5926e;
 }
 
 button:hover {
@@ -129,11 +132,60 @@ form * {
     grid-area: 6 / 1 / 7 / 3;
 }
 
+input, select, textarea {
+    background: none;
+    border: 1px dashed black;
+}
+
 label {
     border-bottom: 1px dashed black;
 }
 
+#right-side, #right-column {
+    width: 100%;
+    height: 100%
+}
+
+#task-header {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid black;
+    background-color: #b5926e;
+    display: flex;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+#task-header-title {
+    flex: 4;
+    padding-left: 5px;
+}
+
+.small-task-title {
+    flex: 1;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.to-do-row {
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px dashed black;
+    width: 100%;
+    height: 40px;
+    display: grid;
+    grid: 1fr 1fr / 4fr 1fr 1fr 1fr;
+    align-items: center;
+    font-family: 'nanum', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+
+
 footer {
-    border-top: 1px dashed black;
+    border-top: 1px solid black;
     justify-content: center;
 }

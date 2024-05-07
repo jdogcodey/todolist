@@ -14,7 +14,7 @@ function openForm() {
     toggleVisible("form");
   });
 }
-function submitForm(obj) {
+function submitForm() {
   document.querySelector("#submit").addEventListener("click", () => {
     event.preventDefault();
     const name = document.querySelector("#to-do-name");

@@ -27,9 +27,11 @@ function changePriority(todo, list, newpriority) {
 
 //Flips between checked and unchecked for completed on the todo
 function completeToDo(todo, list) {
-  allLists[list][todo].completed = allLists[list][todo].completed = "unchecked"
-    ? "checked"
-    : "unchecked";
+  if (allLists[list][todo].completed === "checked") {
+    allLists[list][todo].completed = "unchecked";
+  } else {
+    allLists[list][todo].completed = "checked";
+  }
 }
 
 //Allows you to move the todo between different lists
@@ -41,7 +43,6 @@ function moveList(oldList, newList, obj) {
     deadline: old.deadline,
     priority: old.priority,
     description: old.description,
-    selected: old.selected,
   };
   delete allLists[oldList][obj];
 }

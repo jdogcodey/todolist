@@ -16,9 +16,9 @@ myLogo.src = Logo;
 document.querySelector("#logo").appendChild(myLogo);
 
 openForm();
-submitForm(`globalList`);
+submitForm();
 
-newList("List of Tasks", updatePage);
+newList("Generic List", updatePage);
 // console.log("All lists");
 // console.log(allLists);
 // newList("globalList");
