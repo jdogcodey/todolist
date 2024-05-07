@@ -7,7 +7,7 @@ const allLists = {};
 function newToDo(list, name, deadline, priority, description) {
   allLists[list][name] = {
     name: name,
-    completed: "unchecked",
+    completed: false,
     deadline: deadline,
     priority: priority,
     description: description,
@@ -27,11 +27,12 @@ function changePriority(todo, list, newpriority) {
 
 //Flips between checked and unchecked for completed on the todo
 function completeToDo(todo, list) {
-  if (allLists[list][todo].completed === "checked") {
-    allLists[list][todo].completed = "unchecked";
+  if (allLists[list][todo].completed === true) {
+    allLists[list][todo].completed = false;
   } else {
-    allLists[list][todo].completed = "checked";
+    allLists[list][todo].completed = true;
   }
+  console.log(allLists[list][todo].completed);
 }
 
 //Allows you to move the todo between different lists

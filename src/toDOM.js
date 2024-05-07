@@ -18,48 +18,57 @@ function updatePage() {
       listColor = "pale";
       list.style.backgroundColor = "#d9af84";
     }
-    list.addEventListener("click", function onClick() {
-      rightColumn.innerHTML = "";
-      let taskColor = "pale";
-      for (const [toDoKey, toDoValue] of Object.entries(allLists[listKey])) {
-        const toDoRow = document.createElement("div");
-        if (taskColor === "pale") {
-          taskColor = "dark";
-          toDoRow.style.backgroundColor = "#f6eee3";
-        } else {
-          taskColor = "pale";
-          toDoRow.style.backgroundColor = "#d9af84";
-        }
-        toDoRow.classList.add("to-do-row");
-        rightColumn.appendChild(toDoRow);
-        for (const [toDoItemKey, toDoItemValue] of Object.entries(
-          allLists[listKey][toDoKey]
-        )) {
-          if (toDoItemKey === "completed") {
-            const toDoDetail = document.createElement("input");
-            toDoDetail.type = "checkbox";
-            toDoDetail.value = toDoItemValue;
-            toDoDetail.name = "completed-task";
-            toDoRow.appendChild(toDoDetail);
-            toDoDetail.classList.add("completed-task-checkbox");
-            toDoDetail.addEventListener("click", () => {
-              completeToDo(toDoKey, listKey);
-            });
-          } else {
-            const toDoDetail = document.createElement("span");
-            toDoDetail.textContent = `${toDoItemValue}`;
-            toDoDetail.id = `${toDoItemKey}`;
-            toDoDetail.classList.add(`${toDoItemKey}`);
-            toDoRow.appendChild(toDoDetail);
-          }
-        }
-      }
+    list.addEventListener("click", () => {
+      onClick(rightColumn, listKey);
     });
   }
 }
 
 document.querySelector("#add-list").addEventListener("click", () => {
-  newList(prompt("Add ToDo List", "Name"), updatePage);
+  newList(prompt("Add To Do List", "Name"), updatePage);
 });
 
-export { updatePage };
+function addTaskDetails(listKey, toDoKey, toDoRow) {
+  for (const [toDoItemKey, toDoItemValue] of Object.entries(
+    allLists[listKey][toDoKey]
+  )) {
+    if (toDoItemKey === "completed") {
+      const toDoDetail = document.createElement("input");
+      toDoDetail.type = "checkbox";
+      toDoDetail.checked = toDoItemValue;
+      toDoDetail.name = "completed-task";
+      toDoRow.appendChild(toDoDetail);
+      toDoDetail.classList.add("completed");
+      toDoDetail.addEventListener("click", () => {
+        completeToDo(toDoKey, listKey);
+      });
+    } else {
+      const toDoDetail = document.createElement("span");
+      toDoDetail.textContent = `${toDoItemValue}`;
+      toDoDetail.id = `${toDoItemKey}`;
+      toDoDetail.classList.add(`${toDoItemKey}`);
+      toDoRow.appendChild(toDoDetail);
+    }
+  }
+}
+
+function onClick(rightColumn, listKey) {
+  console.log("triggered");
+  rightColumn.innerHTML = "";
+  let taskColor = "pale";
+  for (const [toDoKey, toDoValue] of Object.entries(allLists[listKey])) {
+    const toDoRow = document.createElement("div");
+    if (taskColor === "pale") {
+      taskColor = "dark";
+      toDoRow.style.backgroundColor = "#f6eee3";
+    } else {
+      taskColor = "pale";
+      toDoRow.style.backgroundColor = "#d9af84";
+    }
+    toDoRow.classList.add("to-do-row");
+    rightColumn.appendChild(toDoRow);
+    addTaskDetails(listKey, toDoKey, toDoRow);
+  }
+}
+
+export { updatePage, onClick };

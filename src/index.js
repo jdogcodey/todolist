@@ -16,7 +16,6 @@ myLogo.src = Logo;
 document.querySelector("#logo").appendChild(myLogo);
 
 openForm();
-submitForm();
 
 newList("Generic List", updatePage);
 // console.log("All lists");

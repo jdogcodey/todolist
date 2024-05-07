@@ -1,29 +1,39 @@
 // Opening the form and submitting the form
 import { toggleVisible } from "./togglevisibility.js";
 import { newToDo, allLists } from "./listfunctions.js";
+import { onClick } from "./toDOM.js";
 
 function openForm() {
   document.querySelector("#open-form").addEventListener("click", () => {
     const listName = Object.keys(allLists);
+    const choiceOfList = document.querySelector("#choose-list");
+    choiceOfList.innerHTML = "";
     for (let i = 0; i < listName.length; i++) {
       const listOption = document.createElement("option");
       listOption.textContent = listName[i];
       listOption.value = listName[i];
-      document.querySelector("#choose-list").appendChild(listOption);
+      choiceOfList.appendChild(listOption);
     }
     toggleVisible("form");
   });
+  submitForm();
 }
 function submitForm() {
   document.querySelector("#submit").addEventListener("click", () => {
     event.preventDefault();
     const name = document.querySelector("#to-do-name");
     const nameValue = name.value;
-    const deadline = document.querySelector("#deadline");
+    console.log("name value");
+    console.log(nameValue);
+    const deadline = document.querySelector("#form-deadline");
     const deadlineValue = deadline.value;
-    const priority = document.querySelector("#priority");
+    console.log("deadline value");
+    console.log(deadlineValue);
+    const priority = document.querySelector("#form-priority");
     const priorityValue = priority.value;
-    const description = document.querySelector("#description");
+    console.log("priority value");
+    console.log(priorityValue);
+    const description = document.querySelector("#form-description");
     const descriptionValue = description.value;
     const list = document.querySelector("#choose-list");
     const listValue = list.value;
@@ -34,10 +44,10 @@ function submitForm() {
       priorityValue,
       descriptionValue
     );
-    console.log(allLists);
-    console.log(listValue);
     toggleVisible("form");
+    const rightColumn = document.querySelector("#right-column");
+    onClick(rightColumn, listValue);
   });
 }
 
-export { openForm, submitForm };
+export { openForm };
