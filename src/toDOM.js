@@ -1,5 +1,8 @@
+// All the DOM functions
+
 import { allLists, completeToDo, newList } from "./listfunctions";
 
+// Function to run an overall update on the page - switches between a pale and slightly darker background for each row
 function updatePage() {
   const leftColumn = document.querySelector("#left-column");
   const rightColumn = document.querySelector("#right-column");
@@ -24,10 +27,12 @@ function updatePage() {
   }
 }
 
+// Listens to when the add list button is pressed and creates a popup asking for the list name
 document.querySelector("#add-list").addEventListener("click", () => {
   newList(prompt("Add To Do List", "Name"), updatePage);
 });
 
+//Adds the details of the task to a row on the page
 function addTaskDetails(listKey, toDoKey, toDoRow) {
   for (const [toDoItemKey, toDoItemValue] of Object.entries(
     allLists[listKey][toDoKey]
@@ -52,6 +57,7 @@ function addTaskDetails(listKey, toDoKey, toDoRow) {
   }
 }
 
+//When selecting a list it updates the page to display all the tasks within that todo
 function onClick(rightColumn, listKey) {
   console.log("triggered");
   rightColumn.innerHTML = "";

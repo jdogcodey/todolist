@@ -3,6 +3,7 @@ import { toggleVisible } from "./togglevisibility.js";
 import { newToDo, allLists } from "./listfunctions.js";
 import { onClick } from "./toDOM.js";
 
+// Open the form when clicking on the open form button
 function openForm() {
   document.querySelector("#open-form").addEventListener("click", () => {
     const listName = Object.keys(allLists);
@@ -18,6 +19,8 @@ function openForm() {
   });
   submitForm();
 }
+
+//Submits the form when clicking on the submit button
 function submitForm() {
   document.querySelector("#submit").addEventListener("click", () => {
     event.preventDefault();
